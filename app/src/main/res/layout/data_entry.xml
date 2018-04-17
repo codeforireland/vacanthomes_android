@@ -1,0 +1,501 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:weightSum="1">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Spinner
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/propertyType"
+                android:layout_weight="0.02"
+                android:layout_marginTop="20dip"
+                android:entries="@array/property_type"
+                android:nextFocusDown="@+id/houseNo"
+                />
+
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:hint="House Number"
+                android:ems="10"
+                android:id="@+id/houseNo"
+                android:layout_marginTop="20dip"
+                android:layout_weight="0.02"
+                android:nextFocusDown="@+id/streetName"
+                />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName"
+                android:hint="Street name or town land"
+                android:ems="10"
+                android:id="@+id/streetName"
+                android:layout_marginTop="20dip"
+                android:layout_weight="0.02"
+                android:nextFocusDown="@+id/townName"
+                />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName"
+                android:hint="Nearest Village / Town"
+                android:ems="10"
+                android:id="@+id/townName"
+                android:layout_marginTop="20dip"
+                android:layout_weight="0.02"
+                android:nextFocusDown="@+id/county"
+                />
+
+            <Spinner
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/county"
+                android:layout_marginTop="20dip"
+                android:layout_weight="0.02"
+                android:entries="@array/county"
+                android:nextFocusDown="@+id/eircode"
+                />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:hint="Eircode"
+                android:ems="10"
+                android:id="@+id/eircode"
+                android:layout_marginTop="20dip"
+                android:layout_weight="0.02"
+                android:nextFocusDown="@+id/geoLocate"
+                />
+
+            <TextView
+                android:text="Geolocation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/geoLocateText"
+                android:layout_marginTop="20dip"
+                android:layout_weight="0.02"
+                android:textSize="20dip"
+                android:paddingLeft="5dip"
+                android:paddingRight="5dip"
+                />
+
+            <Button
+                android:text="Get Current Location"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/geoLocate"
+                android:layout_marginTop="20dip"
+                android:background="#28b3ed"
+                android:textColor="#ffffff"
+                android:paddingLeft="5dip"
+                android:paddingRight="5dip"
+                android:layout_weight="1"
+                android:nextFocusDown="@+id/takePhoto"
+                />
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_marginTop="20dip"
+                android:layout_height="139dp">
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/picture"
+                    />
+            </LinearLayout>
+
+            <Button
+                android:text="Take Photo"
+                android:layout_width="150dp"
+                android:layout_height="50dip"
+                android:id="@+id/takePhoto"
+                android:layout_marginTop="20dip"
+                android:background="#28b3ed"
+                android:textColor="#ffffff"
+                android:paddingLeft="5dip"
+                android:paddingRight="5dip"
+                android:nextFocusDown="@+id/vacantTime"
+                />
+
+            <Button
+                android:text="Library"
+                android:layout_width="150dp"
+                android:layout_height="50dip"
+                android:id="@+id/library"
+                android:layout_marginTop="-50dip"
+                android:layout_marginLeft="170dip"
+                android:background="#28b3ed"
+                android:textColor="#ffffff"
+                android:paddingLeft="5dip"
+                android:paddingRight="5dip"
+                android:nextFocusDown="@+id/vacantTime" />
+
+            <Spinner
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/vacantTime"
+                android:layout_marginTop="20dip"
+                android:layout_weight="0.02"
+                android:entries="@array/how_long_vacant"
+                android:nextFocusDown="@+id/saleRentSign"
+                />
+
+            <TextView
+                android:text="Questions about this property"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView5"
+                android:textSize="20dip"
+                android:layout_marginTop="20dip"
+                android:paddingLeft="5dip"
+                android:paddingRight="5dip"
+                android:layout_weight="0.02" />
+
+            <TextView
+                android:text="Is there a for sale / rent sign on the property?"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dip"
+                android:textSize="20dip"
+                android:paddingLeft="5dip"
+                android:paddingRight="5dip"
+                android:layout_weight="0.02" />
+
+            <ToggleButton
+                android:text="ToggleButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/saleRentSign"
+                android:textOff="No"
+                android:textOn="Yes"
+                android:layout_marginTop="20dip"
+                android:background="#28b3ed"
+                android:textColor="#ffffff"
+                android:paddingLeft="5dip"
+                android:paddingRight="5dip"
+                android:layout_weight="0.02"
+                android:nextFocusDown="@+id/grassOvergrown"
+                />
+
+            <TextView
+                android:text="Is the grass around the property overgrown?"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dip"
+                android:textSize="20dip"
+                android:paddingLeft="5dip"
+                android:paddingRight="5dip"
+                android:layout_weight="0.02" />
+
+            <ToggleButton
+                android:text="ToggleButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/grassOvergrown"
+                android:layout_marginTop="20dip"
+                android:textOff="No"
+                android:textOn="Yes"
+                android:background="#28b3ed"
+                android:textColor="#ffffff"
+                android:paddingLeft="5dip"
+                android:paddingRight="5dip"
+                android:layout_weight="0.02"
+                android:nextFocusDown="@+id/roofDamaged"
+                />
+
+            <TextView
+                android:text="Does the roof look damaged?"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dip"
+                android:textSize="20dip"
+                android:paddingLeft="5dip"
+                android:paddingRight="5dip"
+                android:layout_weight="0.02" />
+
+            <ToggleButton
+                android:text="ToggleButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/roofDamaged"
+                android:layout_marginTop="20dip"
+                android:textOff="No"
+                android:textOn="Yes"
+                android:background="#28b3ed"
+                android:textColor="#ffffff"
+                android:paddingLeft="5dip"
+                android:paddingRight="5dip"
+                android:layout_weight="0.02"
+                android:nextFocusDown="@+id/windowsBoarded"
+                />
+
+            <TextView
+                android:text="Are any of the windows boarded over?"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dip"
+                android:textSize="20dip"
+                android:paddingLeft="5dip"
+                android:paddingRight="5dip"
+                android:layout_weight="0.02" />
+
+            <ToggleButton
+                android:text="ToggleButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/windowsBoarded"
+                android:layout_marginTop="20dip"
+                android:textOff="No"
+                android:textOn="Yes"
+                android:background="#28b3ed"
+                android:textColor="#ffffff"
+                android:paddingLeft="5dip"
+                android:paddingRight="5dip"
+                android:layout_weight="0.02"
+                android:nextFocusDown="@+id/paintPeeling"
+                />
+
+            <TextView
+                android:text="Is the paint on the property visibly peeling?"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dip"
+                android:textSize="20dip"
+                android:paddingLeft="5dip"
+                android:paddingRight="5dip"
+                android:layout_weight="0.02" />
+
+            <ToggleButton
+                android:text="ToggleButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/paintPeeling"
+                android:layout_marginTop="20dip"
+                android:textOff="No"
+                android:textOn="Yes"
+                android:background="#28b3ed"
+                android:textColor="#ffffff"
+                android:paddingLeft="5dip"
+                android:paddingRight="5dip"
+                android:layout_weight="0.02"
+                android:nextFocusDown="@+id/propertyActivity"
+                />
+
+            <TextView
+                android:text="Does there appear to be activity around the property?"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dip"
+                android:textSize="20dip"
+                android:paddingLeft="5dip"
+                android:paddingRight="5dip"
+                android:layout_weight="0.02" />
+
+            <ToggleButton
+                android:text="ToggleButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/propertyActivity"
+                android:textOff="No"
+                android:textOn="Yes"
+                android:layout_marginTop="20dip"
+                android:background="#28b3ed"
+                android:textColor="#ffffff"
+                android:paddingLeft="5dip"
+                android:paddingRight="5dip"
+                android:layout_weight="0.02"
+                android:nextFocusDown="@+id/wasteBins"
+                />
+
+            <TextView
+                android:text="Are there waste bins on the grounds?"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dip"
+                android:textSize="20dip"
+                android:paddingLeft="5dip"
+                android:paddingRight="5dip"
+                android:layout_weight="0.02" />
+
+            <ToggleButton
+                android:text="ToggleButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/wasteBins"
+                android:textOff="No"
+                android:textOn="Yes"
+                android:background="#28b3ed"
+                android:layout_marginTop="20dip"
+                android:textColor="#ffffff"
+                android:paddingLeft="5dip"
+                android:paddingRight="5dip"
+                android:layout_weight="0.02"
+                android:nextFocusDown="@+id/accessToProperty"
+                />
+
+            <TextView
+                android:text="Do you know / have access to the owner of the property?"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dip"
+                android:textSize="20dip"
+                android:paddingLeft="5dip"
+                android:paddingRight="5dip"
+                android:layout_weight="0.02" />
+
+            <ToggleButton
+                android:text="ToggleButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/accessToProperty"
+                android:layout_marginTop="20dip"
+                android:textOff="No"
+                android:textOn="Yes"
+                android:background="#28b3ed"
+                android:textColor="#ffffff"
+                android:paddingLeft="5dip"
+                android:paddingRight="5dip"
+                android:layout_weight="0.02"
+                android:nextFocusDown="@+id/aboutYou"
+                />
+
+            <TextView
+                android:text="About You?"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dip"
+                android:textSize="20dip"
+                android:paddingLeft="5dip"
+                android:paddingRight="5dip"
+                android:layout_weight="0.02" />
+
+            <Spinner
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/aboutYou"
+                android:layout_marginTop="20dip"
+                android:layout_weight="0.02"
+                android:nextFocusDown="@+id/message"
+                android:entries="@array/about_you"
+                />
+
+            <!--EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textMultiLine"
+                android:ems="10"
+                android:hint="Your Message"
+                android:id="@+id/message"
+                android:layout_marginTop="20dip"
+                android:nextFocusDown="@+id/canContact"
+                android:layout_weight="0.02" />
+
+            <TextView
+                android:text="Can we contact you for further details"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView8"
+                android:layout_marginTop="20dip"
+                android:textSize="20dip"
+                android:paddingLeft="5dip"
+                android:paddingRight="5dip"
+                android:layout_weight="0.02" />
+
+            <CheckBox
+                android:text="Yes"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/canContact"
+                android:layout_marginTop="20dip"
+                android:textSize="20dip"
+                android:paddingLeft="5dip"
+                android:paddingRight="5dip"
+                android:nextFocusDown="@+id/editName"
+                android:layout_weight="0.02" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName"
+                android:hint="Name"
+                android:id="@+id/editName"
+                android:layout_marginTop="20dip"
+                android:nextFocusDown="@+id/editEmail"
+                android:layout_weight="0.02" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textEmailAddress"
+                android:hint="email"
+                android:id="@+id/editEmail"
+                android:layout_marginTop="20dip"
+                android:nextFocusDown="@+id/editPhone"
+                android:layout_weight="0.02" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="phone"
+                android:hint="Phone number"
+                android:id="@+id/editPhone"
+                android:layout_marginTop="20dip"
+                android:nextFocusDown="@+id/tandc"
+                android:layout_weight="0.02" /-->
+
+            <TextView
+                android:text="I agree to the terms and conditions"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dip"
+                android:textSize="20dip"
+                android:paddingLeft="5dip"
+                android:paddingRight="5dip"
+                android:layout_weight="0.02" />
+
+            <ToggleButton
+                android:text="ToggleButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/tandc"
+                android:layout_marginTop="20dip"
+                android:textOff="No"
+                android:textOn="Yes"
+                android:background="#28b3ed"
+                android:textColor="#ffffff"
+                android:paddingLeft="5dip"
+                android:paddingRight="5dip"
+                android:nextFocusDown="@+id/buttonSubmit"
+                android:layout_weight="0.02" />
+
+            <Button
+                android:text="SUBMIT"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/buttonSubmit"
+                android:layout_marginTop="20dip"
+                android:background="#28b3ed"
+                android:textColor="#ffffff"
+                android:paddingLeft="5dip"
+                android:paddingRight="5dip"
+                android:layout_weight="0.02" />
+
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
