@@ -1,15 +1,12 @@
 package com.codeforireland.vacanthome;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import static android.R.attr.data;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -26,8 +23,9 @@ public class MainActivity extends AppCompatActivity {
 
         b.setOnClickListener(new View.OnClickListener() {
             public void onClick(View arg0) {
-                Intent i = new Intent(MainActivity.this, DataEntry.class);
-                startActivityForResult(i, SECOND_ACTIVITY_RESULT_CODE);
+//                Intent i = new Intent(MainActivity.this, DataEntry.class);
+//                startActivityForResult(i, SECOND_ACTIVITY_RESULT_CODE);
+                startActivity(new Intent(MainActivity.this, MainActivityNew.class));
 
             }
         });
