@@ -184,6 +184,7 @@ public class DataEntry extends AppCompatActivity {
             ActivityCompat.requestPermissions(DataEntry.this, new String[] {
                     Manifest.permission.ACCESS_FINE_LOCATION
             }, 2);
+
         }
 
 

@@ -64,19 +64,4 @@
         <item>Other</item>
     </string-array>
 
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="btn_start_log_vacant_property">Log a vacant property</string>
-    <string name="btn_capture_photo">Capture photo</string>
-    <string name="hint_please_add_details">Please add details:</string>
-    <string name="hint_type_home">Type home</string>
-    <string name="hint_grass_overgrown">Grass overgrown:</string>
-    <string name="hint_windows_boarded">Windows boarded:</string>
-    <string name="hint_visible_activity">Visible activity:</string>
-    <string name="hint_select_location_from_gps_or_map">Select location from gps or map</string>
-    <string name="btn_gps">GPS</string>
-    <string name="btn_map">MAP</string>
-    <string name="hint_add_some_comments">add some comments</string>
-    <string name="title_main_thank_you_for_submitting_this_information_from_the_vacant_homes_team_and_code_for_ireland">Thank You for submitting this information, from the vacant homes team and Code For Ireland</string>
-
 </resources>
