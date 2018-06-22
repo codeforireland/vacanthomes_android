@@ -28,7 +28,7 @@ public abstract class AbstractStepperActivity extends AppCompatActivity implemen
         layoutId = R.layout.activity_main_new;
         Log.d(TAG, "running onCreate, layout ID: "+layoutId);
         setContentView(layoutId);
-        setTitle("Vacancy Homes Stepper");
+        setTitle(getResources().getString(R.string.app_name));
         int startingStepPosition = savedInstanceState != null ? savedInstanceState.getInt(CURRENT_STEP_POSITION_KEY) : 0;
         stepperLayout = findViewById(R.id.stepperLayout);
         stepperLayout.setAdapter(new MyStepperAdapter(getSupportFragmentManager(), this));
