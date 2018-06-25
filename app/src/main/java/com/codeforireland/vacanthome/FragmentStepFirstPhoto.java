@@ -1,7 +1,6 @@
 package com.codeforireland.vacanthome;
 
 import android.app.Activity;
-import android.content.ContentResolver;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -37,9 +36,9 @@ import java.util.Date;
  * TODO: implement android View Model
  */
 public class FragmentStepFirstPhoto extends Fragment implements Step {
+
     private final static String TAG = FragmentStepFirstPhoto.class.getSimpleName();
     private static final String ARG_POSITION = "current_step_position_key";
-
     private String mCurrentPhotoPath;
     private Button btnPhoto;
     private ImageView imgView;
@@ -51,7 +50,6 @@ public class FragmentStepFirstPhoto extends Fragment implements Step {
 
     public FragmentStepFirstPhoto() {}
 
-
     public static FragmentStepFirstPhoto newInstance() {
         return new FragmentStepFirstPhoto();
     }
@@ -60,7 +58,6 @@ public class FragmentStepFirstPhoto extends Fragment implements Step {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
     }
-
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -81,22 +78,6 @@ public class FragmentStepFirstPhoto extends Fragment implements Step {
                 takePhoto();
             }
         });
-    }
-
-    @Override
-    public void setUserVisibleHint(boolean visible) {
-        super.setUserVisibleHint(visible);
-        if (visible && isResumed()) {
-            //call onResume only if fragment is already visible, otherwise allow natural fragment lifecycle to call onResume
-            onResume();
-        }
-    }
-    @Override
-    public void onResume() {
-        super.onResume();
-        if (getUserVisibleHint()) {
-            if(HomeData.getHomeDataInstance().getPhoto()!=null) imgView.setImageBitmap(HomeData.getHomeDataInstance().getPhoto());
-        }
     }
 
     public void something(boolean done) {
@@ -195,8 +176,8 @@ public class FragmentStepFirstPhoto extends Fragment implements Step {
 
     @Override
     public void onSelected() {
-        Log.d(TAG, "step onSelected");
         //update UI when selected
+        if(HomeData.getHomeDataInstance().getPhoto()!=null) imgView.setImageBitmap(HomeData.getHomeDataInstance().getPhoto());
     }
 
     @Override
@@ -204,5 +185,4 @@ public class FragmentStepFirstPhoto extends Fragment implements Step {
         //handle error inside fragment
         Log.d(TAG, "step error: "+error.getErrorMessage());
     }
-
 }

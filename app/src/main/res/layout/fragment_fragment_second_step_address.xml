@@ -33,7 +33,6 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-
         <TextView
             android:id="@+id/fragment_step_second_text_typeHome_hint"
             style="@style/TextSummaryLabel"
@@ -158,7 +157,6 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/fragment_step_second_location_gps_button" />
-
 
     </android.support.constraint.ConstraintLayout>
 

@@ -1,17 +1,13 @@
 package com.codeforireland.vacanthome.utils;
 
-import android.content.ContentResolver;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Matrix;
 import android.media.ExifInterface;
-import android.net.Uri;
 import android.util.Log;
-
 import java.io.IOException;
 
 public class PhotoFixOrirntation {
-
 
     private static final String TAG = PhotoFixOrirntation.class.getSimpleName();
     private final static int OPTIMIZED_WIDTH_MAX = 800;
