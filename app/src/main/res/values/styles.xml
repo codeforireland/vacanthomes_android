@@ -6,6 +6,7 @@
         <item name="colorPrimary">#89c04f</item>
         <item name="colorPrimaryDark">#568623</item>
         <item name="colorAccent">@color/colorAccent</item>
+        <item name="buttonStyle">@style/custom_button</item>
     </style>
 
     <style name="custom_switch_text" parent="@android:style/TextAppearance.Small">
@@ -39,17 +40,15 @@
         <item name="android:textColor">@android:color/black</item>
 
     </style>
-    <style name="custom_switch">
-        <item name="android:layout_width">wrap_content</item>
-        <item name="android:layout_height">wrap_content</item>
+
+    <style name="custom_switch" parent="Theme.AppCompat.Light">
+        <!-- active thumb & track color (30% transparency) -->
+        <item name="colorControlNormal">@android:color/white</item>
+        <item name="colorControlActivated">@color/colorGreenMedium</item>
+        <item name="colorSwitchThumbNormal">@android:color/white</item>
+        <item name="trackTint">@color/button_text_color_white</item>
         <item name="android:layout_marginLeft">@dimen/activity_vertical_margin</item>
         <item name="android:layout_marginStart">@dimen/activity_vertical_margin</item>
-        <item name="android:showText">true</item>
-        <item name="android:switchTextAppearance">@style/custom_switch_text</item>
-        <item name="android:textOff">No</item>
-        <item name="android:textOn">Yes</item>
-        <item name="android:thumb">@drawable/custom_switch</item>
-        <item name="android:track">@drawable/custom_track</item>
     </style>
 
 
@@ -59,6 +58,15 @@
         <item name="android:padding">@dimen/activity_vertical_margin</item>
         <item name="android:background">@drawable/button_background_green</item>
         <item name="android:textColor">@color/button_text_color_white</item>
+    </style>
+
+    <style name="custom_button" parent="Widget.AppCompat.Button.Colored">
+        <item name="backgroundTint">@color/colorGreenMedium</item>
+        <item name="colorButtonNormal">@color/colorGreenSuperDark</item>
+        <item name="android:textColor">@color/button_text_color_white</item>
+        <item name="android:padding">@dimen/activity_vertical_margin</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
     </style>
 
 </resources>

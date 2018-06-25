@@ -7,7 +7,6 @@ import android.location.LocationManager;
 import android.util.Log;
 import android.widget.Toast;
 
-
 /**
  * Created by Nikodem Walicki on 2018-06-10.
  */
@@ -32,7 +31,7 @@ public class LocationUtils {
                 l = lm.getLastKnownLocation(LocationManager.NETWORK_PROVIDER);
             }
             if(l==null){
-                Log.d(TAG, "LLocation is null..");
+                Log.d(TAG, "Location is null..");
                 Toast.makeText(ac, "Location is NULL", Toast.LENGTH_SHORT).show();
             }
             lm.removeUpdates(listener);
@@ -40,8 +39,6 @@ public class LocationUtils {
             Log.d(TAG, "bestProvider: NULL");
             Toast.makeText(ac, "Please TURN ON location on your phone", Toast.LENGTH_SHORT).show();
         }
-
-
         return l;
     }
 }

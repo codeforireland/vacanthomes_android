@@ -70,8 +70,7 @@ public class ResponseUpload {
         return longitude;
     }
 
-    public void setLongitude (double longitude)
-    {
+    public void setLongitude (double longitude) {
         this.longitude = longitude;
     }
 

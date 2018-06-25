@@ -29,9 +29,6 @@ public class FragmentThirdDetails extends Fragment implements Step{
 
     private static final String TAG = FragmentThirdDetails.class.getSimpleName();
     private static final String ARG_POSITION = "current_step_position_key";
-
-
-    private int stepPosition;
     private TextView tvInfo, tvHomeType, tvGrass, tvWindows, tvActivity, tvComments;
     private ImageView imgPhoto;
 
@@ -40,20 +37,13 @@ public class FragmentThirdDetails extends Fragment implements Step{
     public FragmentThirdDetails() {
     }
 
-    public static FragmentThirdDetails newInstance(int param1) {
-        FragmentThirdDetails fragment = new FragmentThirdDetails();
-        Bundle args = new Bundle();
-        args.putInt(ARG_POSITION, param1);
-        fragment.setArguments(args);
-        return fragment;
+    public static FragmentThirdDetails newInstance() {
+        return new FragmentThirdDetails();
     }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            stepPosition = getArguments().getInt(ARG_POSITION);
-        }
     }
 
     @Override
@@ -70,10 +60,12 @@ public class FragmentThirdDetails extends Fragment implements Step{
         imgPhoto = v.findViewById(R.id.fragment_step_third_imageView_photo);
         return v;
     }
+
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
     }
+
     private void displayData(){
         if(HomeData.getHomeDataInstance()!=null){
             tvHomeType.setText(HomeData.getHomeDataInstance().getHomeType());
@@ -82,12 +74,9 @@ public class FragmentThirdDetails extends Fragment implements Step{
             tvActivity.setText(HomeData.getHomeDataInstance().isVisibleActivity() ? "yes" : "no");
             tvComments.setText(HomeData.getHomeDataInstance().getComment());
             imgPhoto.setImageBitmap(HomeData.getHomeDataInstance().getPhoto());
-        }else {
-            onSomething(false);
         }
-
-
     }
+
     @Override
     public void setUserVisibleHint(boolean visible) {
         super.setUserVisibleHint(visible);
@@ -102,12 +91,6 @@ public class FragmentThirdDetails extends Fragment implements Step{
         super.onResume();
         if (getUserVisibleHint()) {
             displayData();
-        }
-    }
-
-    public void onSomething(boolean done) {
-        if (mListener != null) {
-            mListener.onDetailsDone(done);
         }
     }
 
@@ -128,7 +111,6 @@ public class FragmentThirdDetails extends Fragment implements Step{
         mListener = null;
     }
 
-
     @Nullable
     @Override
     public VerificationError verifyStep() {
@@ -139,12 +121,9 @@ public class FragmentThirdDetails extends Fragment implements Step{
 
     @Override
     public void onSelected() {
-
     }
 
     @Override
     public void onError(@NonNull VerificationError error) {
-
     }
-
 }

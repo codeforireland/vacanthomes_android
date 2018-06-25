@@ -15,7 +15,6 @@ import com.stepstone.stepper.viewmodel.StepViewModel;
 
 public class MyStepperAdapter extends AbstractFragmentStepAdapter {
 
-    public final static String CURRENT_STEP_POSITION_KEY="current_step_position_key";
     private final static String TAG = MyStepperAdapter.class.getSimpleName();
 
     public MyStepperAdapter(@NonNull FragmentManager fm, @NonNull Context context) {
@@ -27,16 +26,15 @@ public class MyStepperAdapter extends AbstractFragmentStepAdapter {
         Log.d(TAG, "create step no: "+position);
         Step step;
         switch (position){
-            case 0: step = FragmentStepFirstPhoto.newInstance(position);
+            case 0: step = FragmentStepFirstPhoto.newInstance();
                 break;
-            case 1: step = FragmentSecondStepAddress.newInstance(position);
+            case 1: step = FragmentSecondStepAddress.newInstance();
                 break;
-            case 2: step = FragmentThirdDetails.newInstance(position);
+            case 2: step = FragmentThirdDetails.newInstance();
                 break;
             default: step = null;
                 Log.d(TAG, "createStep switch default");
         }
-
         return step;
     }
 
@@ -49,7 +47,6 @@ public class MyStepperAdapter extends AbstractFragmentStepAdapter {
     @Override
     public StepViewModel getViewModel(@IntRange (from = 0) int position) {
         Log.d(TAG, "return new stepper view model");
-//        return super.getViewModel(position);
         return new StepViewModel.Builder(context)
 //                .setSubtitle("sub position of "+String.valueOf(position))
                 .setTitle(RegisterHomeSteps.getStepsList().get(position))

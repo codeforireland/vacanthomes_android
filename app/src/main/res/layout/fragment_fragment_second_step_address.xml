@@ -62,7 +62,9 @@
 
         <Switch
             android:id="@+id/fragment_step_second_grass_toggleButton"
-            style="@style/custom_switch"
+            app:theme="@style/custom_switch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             app:layout_constraintBottom_toBottomOf="@+id/fragment_step_second_text_grass_hint"
             app:layout_constraintStart_toStartOf="@+id/vertical_middle"
             app:layout_constraintTop_toTopOf="@+id/fragment_step_second_text_grass_hint" />
@@ -76,14 +78,18 @@
 
         <Switch
             android:id="@+id/fragment_step_second_windows_toggleButton"
-            style="@style/custom_switch"
+            app:theme="@style/custom_switch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             app:layout_constraintBottom_toBottomOf="@+id/fragment_step_second_text_windows_hint"
             app:layout_constraintStart_toStartOf="@+id/vertical_middle"
             app:layout_constraintTop_toTopOf="@+id/fragment_step_second_text_windows_hint" />
 
         <Switch
             android:id="@+id/fragment_step_second_activity_toggleButton"
-            style="@style/custom_switch"
+            app:theme="@style/custom_switch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             app:layout_constraintBottom_toBottomOf="@+id/fragment_step_second_text_activity_hint"
             app:layout_constraintStart_toStartOf="@+id/vertical_middle"
             app:layout_constraintTop_toTopOf="@+id/fragment_step_second_text_activity_hint" />
@@ -109,8 +115,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/fragment_step_second_text_activity_hint" />
 
-
-        <Button
+        <android.support.v7.widget.AppCompatButton
             android:id="@+id/fragment_step_second_location_gps_button"
             android:layout_marginEnd="@dimen/activity_horizontal_margin"
             android:layout_marginLeft="@dimen/activity_horizontal_margin"
@@ -118,13 +123,12 @@
             android:layout_marginStart="@dimen/activity_horizontal_margin"
             android:layout_marginTop="@dimen/activity_vertical_margin"
             android:text="@string/btn_gps"
-            style="@style/button_green"
-
+            style="@style/custom_button"
             app:layout_constraintEnd_toStartOf="@+id/vertical_middle"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/fragment_step_second_text_location_hint" />
 
-        <Button
+        <android.support.v7.widget.AppCompatButton
             android:id="@+id/fragment_step_second_location_map_button"
             android:layout_marginEnd="@dimen/activity_horizontal_margin"
             android:layout_marginLeft="@dimen/activity_horizontal_margin"
@@ -132,7 +136,7 @@
             android:layout_marginStart="@dimen/activity_horizontal_margin"
             android:layout_marginTop="@dimen/activity_vertical_margin"
             android:text="@string/btn_map"
-            style="@style/button_green"
+            style="@style/custom_button"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="@+id/vertical_middle"
             app:layout_constraintTop_toBottomOf="@+id/fragment_step_second_text_location_hint" />
@@ -159,10 +163,3 @@
     </android.support.constraint.ConstraintLayout>
 
 </ScrollView>
-
-    <!--
-    rounded background, not used now
-    android:background="@drawable/button_background_green"
-
-    android:background="@drawable/rounded_edittext"
-    -->

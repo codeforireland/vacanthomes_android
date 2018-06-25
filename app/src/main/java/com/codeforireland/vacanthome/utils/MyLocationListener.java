@@ -16,29 +16,22 @@ public class MyLocationListener  implements LocationListener {
 
     @Override
     public void onLocationChanged(Location location) {
-
         myLatitude = location.getLatitude();
         myLongitude = location.getLongitude();
         Log.d(TAG, "onLocationChanged, lat: "+myLatitude+" lng: "+myLongitude);
-
     }
 
     @Override
     public void onStatusChanged(String provider, int status, Bundle extras) {
         Log.d(TAG, "status changed, provider: "+provider+" status: "+status);
-
     }
 
     @Override
     public void onProviderEnabled(String provider) {
         Log.d(TAG, "provider enabled: "+provider);
-
     }
 
     @Override
     public void onProviderDisabled(String provider) {
-
-
     }
-
 }

@@ -19,8 +19,7 @@
             android:orientation="vertical"
             app:layout_constraintGuide_begin="206dp" />
 
-
-        <Button
+        <android.support.v7.widget.AppCompatButton
             android:id="@+id/fragment_step_first_capture_pic_btn"
             android:layout_marginEnd="@dimen/activity_horizontal_margin"
             android:layout_marginLeft="@dimen/activity_horizontal_margin"
@@ -28,7 +27,7 @@
             android:layout_marginStart="@dimen/activity_vertical_margin"
             android:layout_marginTop="@dimen/activity_vertical_margin"
             android:text="@string/btn_capture_photo"
-            style="@style/button_green"
+            style="@style/custom_button"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />

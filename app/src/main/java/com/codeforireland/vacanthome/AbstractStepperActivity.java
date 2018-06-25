@@ -6,7 +6,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
-
 import com.codeforireland.vacanthome.stepperutils.MyStepperAdapter;
 import com.stepstone.stepper.StepperLayout;
 import com.stepstone.stepper.VerificationError;
@@ -15,12 +14,9 @@ public abstract class AbstractStepperActivity extends AppCompatActivity implemen
         FragmentStepsInterfaces.FirstStepInterface, FragmentStepsInterfaces.SecondStepInterface, FragmentStepsInterfaces.ThirdStepInterface {
 
     private static final String TAG=AbstractStepperActivity.class.getSimpleName();
-
     private static final  String CURRENT_STEP_POSITION_KEY = "current_step_position";
-
     private int layoutId;
     private StepperLayout stepperLayout;
-
 
         @Override
         protected void onCreate(Bundle savedInstanceState) {
@@ -65,7 +61,6 @@ public abstract class AbstractStepperActivity extends AppCompatActivity implemen
         Toast.makeText(this, "Data ready to GO!", Toast.LENGTH_SHORT).show();
         //TODO:send data to VH server....
         //TODO: if server response success clear HomeData singleton
-
     }
 
     @Override
@@ -84,7 +79,6 @@ public abstract class AbstractStepperActivity extends AppCompatActivity implemen
         Log.d(TAG, "onReturn");
         finish();
     }
-
 
     @Override
     public void onPhotoDone(boolean isDone) {

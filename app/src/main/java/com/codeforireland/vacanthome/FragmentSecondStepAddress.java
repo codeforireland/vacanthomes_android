@@ -22,11 +22,8 @@ import android.widget.Toast;
 
 import com.codeforireland.vacanthome.model.HomeData;
 import com.codeforireland.vacanthome.utils.LocationUtils;
-import com.codeforireland.vacanthome.utils.PermissionUtils;
 import com.stepstone.stepper.Step;
 import com.stepstone.stepper.VerificationError;
-
-import java.util.ArrayList;
 
 
 /**
@@ -35,7 +32,6 @@ import java.util.ArrayList;
  * to handle interaction events.
  * Use the {@link FragmentSecondStepAddress#newInstance} factory method to
  * create an instance of this fragment.
- * TODO: implement butterknife binding in ViewModel !!!!!!
  */
 public class FragmentSecondStepAddress extends Fragment implements Step{
 
@@ -48,21 +44,15 @@ public class FragmentSecondStepAddress extends Fragment implements Step{
     private Button btnAutoLocation, btnMapLocation;
     private Spinner spinnerHomeType;
     private EditText edComment;
-//    private boolean locattionFromMap;
     public  static final int PERMISSIONS_REQUEST = 123;
 
     private FragmentStepsInterfaces.SecondStepInterface mListener;
 
     public FragmentSecondStepAddress() {
-        // Required empty public constructor
     }
 
-    public static FragmentSecondStepAddress newInstance(int param1) {
-        FragmentSecondStepAddress fragment = new FragmentSecondStepAddress();
-        Bundle args = new Bundle();
-        args.putInt(ARG_POSITION, param1);
-        fragment.setArguments(args);
-        return fragment;
+    public static FragmentSecondStepAddress newInstance() {
+        return new FragmentSecondStepAddress();
     }
 
     @Override
@@ -76,7 +66,6 @@ public class FragmentSecondStepAddress extends Fragment implements Step{
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-
         View v = inflater.inflate(R.layout.fragment_fragment_second_step_address, container, false);
         tvInfo = v.findViewById(R.id.fragment_step_second_text_info);
         edComment = v.findViewById(R.id.fragment_step_second_comments_edittext);
@@ -95,13 +84,6 @@ public class FragmentSecondStepAddress extends Fragment implements Step{
         MyButton buttons = new MyButton();
         btnMapLocation.setOnClickListener(buttons);
         btnAutoLocation.setOnClickListener(buttons);
-
-    }
-
-    public void onSomething(boolean done) {
-        if (mListener != null) {
-            mListener.onAddressDone(done);
-        }
     }
 
     @Override
@@ -120,7 +102,6 @@ public class FragmentSecondStepAddress extends Fragment implements Step{
         super.onDetach();
         mListener = null;
     }
-
 
     /**
      * if lat or lng == 0 not allow to send this data, the other are optional
@@ -143,21 +124,15 @@ public class FragmentSecondStepAddress extends Fragment implements Step{
         Log.d(TAG, "spinner position: "+spinnerHomeType.getSelectedItemPosition());
         if(spinnerHomeType.getSelectedItemPosition()==0) return new VerificationError("please select type of home");
         if(HomeData.getHomeDataInstance().getLatitude()==0) return new VerificationError("please set location");
-//        return (HomeData.getHomeDataInstance().getLatitude()!=0) ? null : new VerificationError("location is NULL");
         return null;
-
     }
-
-
 
     @Override
     public void onSelected() {
-
     }
 
     @Override
     public void onError(@NonNull VerificationError error) {
-
     }
 
     private void getLocation(boolean locattionFromMap){
@@ -186,7 +161,6 @@ public class FragmentSecondStepAddress extends Fragment implements Step{
     }
 
     private class MyButton implements View.OnClickListener{
-
         @Override
         public void onClick(View v) {
             switch (v.getId()){

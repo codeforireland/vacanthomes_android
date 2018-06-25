@@ -1,4 +1,4 @@
-package com.codeforireland.vacanthome.model;
+package com.codeforireland.vacanthome.network;
 
 import android.util.Log;
 

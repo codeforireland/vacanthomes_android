@@ -11,5 +11,4 @@ public class FragmentStepsInterfaces {
     interface ThirdStepInterface{
         void onDetailsDone(boolean isDone);
     }
-
 }

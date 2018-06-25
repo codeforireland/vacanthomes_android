@@ -8,7 +8,7 @@
 
     <!-- text colors -->
     <color name="colorLabelGreyDark">#686868</color>
-
+    <color name="colorMediumGrey">#FF585858</color>
 
     <!-- buttons colors -->
 

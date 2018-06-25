@@ -5,14 +5,12 @@ import android.content.ContentResolver;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
-import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.support.v4.content.FileProvider;
 import android.util.Log;
@@ -21,15 +19,12 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
-
 import com.codeforireland.vacanthome.model.HomeData;
 import com.codeforireland.vacanthome.utils.PhotoFixOrirntation;
 import com.stepstone.stepper.Step;
 import com.stepstone.stepper.VerificationError;
-
 import java.io.File;
 import java.io.IOException;
-import java.sql.Timestamp;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -57,12 +52,8 @@ public class FragmentStepFirstPhoto extends Fragment implements Step {
     public FragmentStepFirstPhoto() {}
 
 
-    public static FragmentStepFirstPhoto newInstance(int param1) {
-        FragmentStepFirstPhoto fragment = new FragmentStepFirstPhoto();
-        Bundle args = new Bundle();
-        args.putInt(ARG_POSITION, param1);
-        fragment.setArguments(args);
-        return fragment;
+    public static FragmentStepFirstPhoto newInstance() {
+        return new FragmentStepFirstPhoto();
     }
 
     @Override
@@ -129,17 +120,6 @@ public class FragmentStepFirstPhoto extends Fragment implements Step {
         return image;
     }
 
-    /**
-     * test only - delete it
-     */
-    private void galleryAddPic() {
-        Intent mediaScanIntent = new Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE);
-        File f = new File(mCurrentPhotoPath);
-        Uri contentUri = Uri.fromFile(f);
-        mediaScanIntent.setData(contentUri);
-        getActivity().sendBroadcast(mediaScanIntent);
-    }
-
     private void takePhoto() {
         Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
         if (takePictureIntent.resolveActivity(getActivity().getPackageManager()) != null) {
@@ -162,32 +142,28 @@ public class FragmentStepFirstPhoto extends Fragment implements Step {
         }
     }
 
-
-    private void setImage(Uri selectedImage) {
-        getActivity().getContentResolver().notifyChange(selectedImage, null);
-        ContentResolver cr = getActivity().getContentResolver();
+    private void setImage() {
         try {
-            photo = PhotoFixOrirntation.corectPhoto(mCurrentPhotoPath, selectedImage,cr );
+            photo = PhotoFixOrirntation.corectPhoto(mCurrentPhotoPath );
             imgView.setImageBitmap(photo);
-//            galleryAddPic();
             something(true);
         } catch (Exception e) {
             e.printStackTrace();
             something(false);
         }
     }
+
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if(requestCode==TAKE_PICTURE){
             if (resultCode == Activity.RESULT_OK) {
-                setImage(imageUri);
+                setImage();
             }else {
-                Log.d(TAG, "failed of taking  photo");
+                Log.d(TAG, "Failed to take photo");
             }
         }
     }
-
 
     @Override
     public void onAttach(Context context) {
@@ -206,7 +182,6 @@ public class FragmentStepFirstPhoto extends Fragment implements Step {
         mListener = null;
     }
 
-
     @Nullable
     @Override
     public VerificationError verifyStep() {
@@ -222,7 +197,6 @@ public class FragmentStepFirstPhoto extends Fragment implements Step {
     public void onSelected() {
         Log.d(TAG, "step onSelected");
         //update UI when selected
-
     }
 
     @Override

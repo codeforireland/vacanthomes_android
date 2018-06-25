@@ -9,4 +9,3 @@
     app:ms_nextButtonText="NEXT"
     app:ms_completeButtonText="SUBMIT"
     app:ms_stepperType="tabs" />
-
