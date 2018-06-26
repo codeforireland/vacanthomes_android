@@ -9,7 +9,6 @@
         <item>Other</item>
     </string-array>
 
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="btn_start_log_vacant_property">Log a vacant property</string>
     <string name="btn_capture_photo">Capture photo</string>
     <string name="hint_please_add_details">Please add details:</string>

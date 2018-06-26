@@ -46,9 +46,7 @@ public class MyStepperAdapter extends AbstractFragmentStepAdapter {
     @NonNull
     @Override
     public StepViewModel getViewModel(@IntRange (from = 0) int position) {
-        Log.d(TAG, "return new stepper view model");
         return new StepViewModel.Builder(context)
-//                .setSubtitle("sub position of "+String.valueOf(position))
                 .setTitle(RegisterHomeSteps.getStepsList().get(position))
                 .create();
     }

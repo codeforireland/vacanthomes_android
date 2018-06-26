@@ -26,6 +26,9 @@ dependencies {
 
     implementation 'com.android.support:appcompat-v7:27.1.1'
     implementation 'com.google.firebase:firebase-appindexing:16.0.1'
+
+    //mapy
+    implementation 'com.google.android.gms:play-services-maps:15.0.1'
     //network
     implementation 'com.squareup.okhttp:okhttp:2.5.0'
     implementation 'com.squareup.retrofit2:retrofit:2.3.0'
@@ -52,3 +55,4 @@ dependencies {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
 }
+apply plugin: 'com.google.gms.google-services'

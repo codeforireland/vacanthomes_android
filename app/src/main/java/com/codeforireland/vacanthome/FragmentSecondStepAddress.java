@@ -2,6 +2,7 @@ package com.codeforireland.vacanthome;
 
 import android.Manifest;
 import android.content.Context;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.Location;
 import android.os.Bundle;
@@ -45,6 +46,7 @@ public class FragmentSecondStepAddress extends Fragment implements Step{
     private Spinner spinnerHomeType;
     private EditText edComment;
     public  static final int PERMISSIONS_REQUEST = 123;
+    public static final int MAP_REQUEST = 234;
 
     private FragmentStepsInterfaces.SecondStepInterface mListener;
 
@@ -103,6 +105,19 @@ public class FragmentSecondStepAddress extends Fragment implements Step{
         mListener = null;
     }
 
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data){
+        Log.d(TAG, "Acc Result:::: request code: "+requestCode+" result code: "+requestCode);
+        if(requestCode==MAP_REQUEST){
+            if(data!=null){
+                double lat = data.getDoubleExtra("lat", 0);
+                double lng = data.getDoubleExtra("lng", 0);
+                Log.d(TAG, "latitude: "+lat+" longitude: "+lng);
+                HomeData.getHomeDataInstance().setLatitude(lat);
+                HomeData.getHomeDataInstance().setLongitude(lng);
+            }
+        }
+    }
     /**
      * if lat or lng == 0 not allow to send this data, the other are optional
      * @return null if  location is captured
@@ -140,11 +155,16 @@ public class FragmentSecondStepAddress extends Fragment implements Step{
                 PackageManager.PERMISSION_GRANTED &&
                 ContextCompat.checkSelfPermission(getContext(), android.Manifest.permission.ACCESS_COARSE_LOCATION) ==
                         PackageManager.PERMISSION_GRANTED) {
+            Location location = LocationUtils.getLatLng(getActivity());
+            Toast.makeText(getContext(), "Map needs a developer key", Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(getContext(), MyLocationMapActivity.class);
             if(locattionFromMap){
-                //TODO: open map fragment
-                Toast.makeText(getContext(), "Map needs a developer key", Toast.LENGTH_SHORT).show();
+                if(location!=null){
+                    intent.putExtra("lat", location.getLatitude());
+                    intent.putExtra("lng", location.getLongitude());
+                }
+                startActivityForResult(intent, MAP_REQUEST);
             }else {
-                Location location = LocationUtils.getLatLng(getActivity());
                 if(location!=null){
                     Log.d(TAG, "latitude: "+location.getLatitude());
                     HomeData.getHomeDataInstance().setLatitude(location.getLatitude());
