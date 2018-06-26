@@ -46,6 +46,8 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/activity_vertical_margin"
             android:layout_marginStart="@dimen/activity_vertical_margin"
+            android:paddingRight="@dimen/activity_horizontal_margin"
+            android:paddingLeft="@dimen/activity_horizontal_margin"
             android:entries="@array/property_type"
             android:nextFocusDown="@+id/houseNo"
             app:layout_constraintBottom_toBottomOf="@+id/fragment_step_second_text_typeHome_hint"
@@ -64,6 +66,8 @@
             app:theme="@style/custom_switch"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/activity_vertical_margin"
+            android:layout_marginStart="@dimen/activity_vertical_margin"
             app:layout_constraintBottom_toBottomOf="@+id/fragment_step_second_text_grass_hint"
             app:layout_constraintStart_toStartOf="@+id/vertical_middle"
             app:layout_constraintTop_toTopOf="@+id/fragment_step_second_text_grass_hint" />
@@ -80,6 +84,8 @@
             app:theme="@style/custom_switch"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/activity_vertical_margin"
+            android:layout_marginStart="@dimen/activity_vertical_margin"
             app:layout_constraintBottom_toBottomOf="@+id/fragment_step_second_text_windows_hint"
             app:layout_constraintStart_toStartOf="@+id/vertical_middle"
             app:layout_constraintTop_toTopOf="@+id/fragment_step_second_text_windows_hint" />
@@ -89,6 +95,8 @@
             app:theme="@style/custom_switch"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/activity_vertical_margin"
+            android:layout_marginStart="@dimen/activity_vertical_margin"
             app:layout_constraintBottom_toBottomOf="@+id/fragment_step_second_text_activity_hint"
             app:layout_constraintStart_toStartOf="@+id/vertical_middle"
             app:layout_constraintTop_toTopOf="@+id/fragment_step_second_text_activity_hint" />
@@ -157,6 +165,48 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/fragment_step_second_location_gps_button" />
+
+        <LinearLayout
+            android:id="@+id/grass_click_area"
+            android:layout_width="match_parent"
+            android:layout_height="32dp"
+            android:layout_marginEnd="@dimen/activity_horizontal_margin"
+            android:layout_marginLeft="@dimen/activity_horizontal_margin"
+            android:layout_marginRight="@dimen/activity_horizontal_margin"
+            android:layout_marginStart="@dimen/activity_horizontal_margin"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="@+id/fragment_step_second_text_grass_hint"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/fragment_step_second_text_grass_hint"/>
+
+        <LinearLayout
+            android:id="@+id/windows_click_area"
+            android:layout_width="match_parent"
+            android:layout_height="32dp"
+            android:layout_marginEnd="@dimen/activity_horizontal_margin"
+            android:layout_marginLeft="@dimen/activity_horizontal_margin"
+            android:layout_marginRight="@dimen/activity_horizontal_margin"
+            android:layout_marginStart="@dimen/activity_horizontal_margin"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="@+id/fragment_step_second_text_windows_hint"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/fragment_step_second_text_windows_hint"/>
+
+        <LinearLayout
+            android:id="@+id/activity_click_area"
+            android:layout_width="match_parent"
+            android:layout_height="32dp"
+            android:layout_marginEnd="@dimen/activity_horizontal_margin"
+            android:layout_marginLeft="@dimen/activity_horizontal_margin"
+            android:layout_marginRight="@dimen/activity_horizontal_margin"
+            android:layout_marginStart="@dimen/activity_horizontal_margin"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="@+id/fragment_step_second_text_activity_hint"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/fragment_step_second_text_activity_hint"/>
 
     </android.support.constraint.ConstraintLayout>
 

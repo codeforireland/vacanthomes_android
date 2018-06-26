@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Vacant Homes</string>
     <string-array name="property_type">
-        <item>-- Select Property Type --</item>
+        <item>-- Select --</item>
         <item>Detached</item>
         <item>Semi Detached</item>
         <item>Terraced</item>

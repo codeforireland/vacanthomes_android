@@ -16,6 +16,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.Switch;
 import android.widget.TextView;
@@ -45,6 +46,7 @@ public class FragmentSecondStepAddress extends Fragment implements Step{
     private Button btnAutoLocation, btnMapLocation;
     private Spinner spinnerHomeType;
     private EditText edComment;
+    private LinearLayout layoutClickGrass, layoutClickWindows, layoutClickActivity;
     public  static final int PERMISSIONS_REQUEST = 123;
     public static final int MAP_REQUEST = 234;
 
@@ -69,6 +71,9 @@ public class FragmentSecondStepAddress extends Fragment implements Step{
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_fragment_second_step_address, container, false);
+        layoutClickActivity = v.findViewById(R.id.activity_click_area);
+        layoutClickGrass = v.findViewById(R.id.grass_click_area);
+        layoutClickWindows = v.findViewById(R.id.windows_click_area);
         tvInfo = v.findViewById(R.id.fragment_step_second_text_info);
         edComment = v.findViewById(R.id.fragment_step_second_comments_edittext);
         tbGrass = v.findViewById(R.id.fragment_step_second_grass_toggleButton);
@@ -86,6 +91,9 @@ public class FragmentSecondStepAddress extends Fragment implements Step{
         MyButton buttons = new MyButton();
         btnMapLocation.setOnClickListener(buttons);
         btnAutoLocation.setOnClickListener(buttons);
+        layoutClickWindows.setOnClickListener(buttons);
+        layoutClickGrass.setOnClickListener(buttons);
+        layoutClickActivity.setOnClickListener(buttons);
     }
 
     @Override
@@ -189,6 +197,18 @@ public class FragmentSecondStepAddress extends Fragment implements Step{
                     break;
                 case R.id.fragment_step_second_location_map_button:
                     getLocation(true);
+                    break;
+                case R.id.activity_click_area:
+                    if(tbActivity.isChecked()) tbActivity.setChecked(false);
+                    else tbActivity.setChecked(true);
+                    break;
+                case R.id.grass_click_area:
+                    if(tbGrass.isChecked()) tbGrass.setChecked(false);
+                    else tbGrass.setChecked(true);
+                    break;
+                case R.id.windows_click_area:
+                    if(tbWindows.isChecked()) tbWindows.setChecked(false);
+                    else tbWindows.setChecked(true);
                     break;
             }
         }
