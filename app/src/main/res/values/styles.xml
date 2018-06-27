@@ -6,6 +6,55 @@
         <item name="colorPrimary">#89c04f</item>
         <item name="colorPrimaryDark">#568623</item>
         <item name="colorAccent">@color/colorAccent</item>
+        <item name="buttonStyle">@style/custom_button</item>
+    </style>
+
+    <style name="custom_switch_text" parent="@android:style/TextAppearance.Small">
+        <item name="android:textColor">#FFFFFF</item>
+    </style>
+
+    <style name="textBig" parent="@style/TextAppearance.AppCompat.Large">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@android:color/black</item>
+    </style>
+    <style name="TextMedium" parent="@style/TextAppearance.AppCompat.Subhead">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@android:color/black</item>
+    </style>
+    <style name="TextSummary" parent="@style/TextAppearance.AppCompat.Caption">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginLeft">@dimen/activity_horizontal_margin</item>
+        <item name="android:layout_marginStart">@dimen/activity_horizontal_margin</item>
+        <item name="android:typeface">monospace</item>
+        <item name="android:textSize">20sp</item>
+    </style>
+    <style name="TextSummaryLabel" parent="@style/TextSummary">
+        <item name="android:textColor">@color/colorLabelGreyDark</item>
+        <item name="android:layout_marginTop">@dimen/activity_vertical_margin</item>
+
+    </style>
+    <style name="TextSummaryValue" parent="@style/TextSummary">
+        <item name="android:textColor">@android:color/black</item>
+    </style>
+
+    <style name="custom_switch" parent="Theme.AppCompat.Light">
+        <!-- active thumb & track color (30% transparency) -->
+        <item name="colorControlNormal">@android:color/white</item>
+        <item name="colorControlActivated">@color/colorGreenMedium</item>
+        <item name="colorSwitchThumbNormal">@android:color/white</item>
+        <item name="trackTint">@color/button_text_color_white</item>
+    </style>
+
+    <style name="custom_button" parent="Widget.AppCompat.Button.Colored">
+        <item name="backgroundTint">@color/colorGreenMedium</item>
+        <item name="colorButtonNormal">@color/colorGreenSuperDark</item>
+        <item name="android:textColor">@color/button_text_color_white</item>
+        <item name="android:padding">@dimen/activity_vertical_margin</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
     </style>
 
 </resources>

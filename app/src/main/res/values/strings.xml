@@ -1,67 +1,25 @@
 <resources>
     <string name="app_name">Vacant Homes</string>
     <string-array name="property_type">
-        <item>-- Select Property Type --</item>
+        <item>-- Select --</item>
         <item>Detached</item>
         <item>Semi Detached</item>
         <item>Terraced</item>
         <item>Flat / Apartment</item>
         <item>Other</item>
     </string-array>
-    <string-array name="county">
-        <item>-- Select County --</item>
-        <item>Carlow</item>
-        <item>Cavan</item>
-        <item>Clare</item>
-        <item>Cork City</item>
-        <item>Cork County</item>
-        <item>Donegal</item>
-        <item>Dublin City</item>
-        <item>South Dublin</item>
-        <item>Dún Laoghaire-Rathdown</item>
-        <item>Fingal</item>
-        <item>Galway City</item>
-        <item>Galway County</item>
-        <item>Kerry</item>
-        <item>Kildare</item>
-        <item>Kilkenny</item>
-        <item>Laois</item>
-        <item>Leitrim</item>
-        <item>Limerick City and County</item>
-        <item>Longford</item>
-        <item>Louth</item>
-        <item>Mayo</item>
-        <item>Meath</item>
-        <item>Monaghan</item>
-        <item>Offaly</item>
-        <item>Roscommon</item>
-        <item>Sligo</item>
-        <item>Tipperary</item>
-        <item>South Tipperary</item>
-        <item>Waterford City</item>
-        <item>Waterford County</item>
-        <item>Westmeath</item>
-        <item>Wexford</item>
-        <item>Wicklow</item>
-    </string-array>
-    <string-array name="how_long_vacant">
-        <item>-- How long has it been vacant? --</item>
-        <item>Unknown</item>
-        <item>0 to 6 months</item>
-        <item>7 to 12 months</item>
-        <item>13 to 24 months</item>
-        <item>Greater than 24 months</item>
-    </string-array>
-    <string-array name="about_you">
-        <item>-- Select --</item>
-        <item>I Represent a Local Authority </item>
-        <item>I am an Individual / Private Citizen </item>
-        <item>I Represent a Tidy Towns Group </item>
-        <item>I Represent a Community Volunteer Group </item>
-        <item>I Represent a Business Group </item>
-        <item>I Represent a Residents Association</item>
-        <item>I am the Property Owner</item>
-        <item>Other</item>
-    </string-array>
+
+    <string name="btn_start_log_vacant_property">Log a vacant property</string>
+    <string name="btn_capture_photo">Capture photo</string>
+    <string name="hint_please_add_details">Please add details:</string>
+    <string name="hint_type_home">Type home</string>
+    <string name="hint_grass_overgrown">Grass overgrown:</string>
+    <string name="hint_windows_boarded">Windows boarded:</string>
+    <string name="hint_visible_activity">Visible activity:</string>
+    <string name="hint_select_location_from_gps_or_map">Select location from gps or map</string>
+    <string name="btn_gps">GPS</string>
+    <string name="btn_map">MAP</string>
+    <string name="hint_add_some_comments">add some comments</string>
+    <string name="title_main_thanks_for_submitting">Thank You for submitting this information, from the vacant homes team and Code For Ireland</string>
 
 </resources>
